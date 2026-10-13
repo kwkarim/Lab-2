@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
 
-    public float movespeed;
+    public float movespeeed;
     public float jumpHeight;
     public KeyCode Spacebar;
     public KeyCode L;
@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim= GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         if(Input.GetKey(L)){
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-movespeed, GetComponent<Rigidbody2D>().velocity.y);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-movespeeed, GetComponent<Rigidbody2D>().velocity.y);
             
             if (GetComponent<SpriteRenderer>()!=null)
             {
@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
 
 
         if(Input.GetKey(R)){
-            GetComponent<Rigidbody2D>().velocity = new Vector2(movespeed, GetComponent<Rigidbody2D>().velocity.y);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(movespeeed, GetComponent<Rigidbody2D>().velocity.y);
 
             if(GetComponent<SpriteRenderer>()!=null){
                 GetComponent<SpriteRenderer>().flipX=false;
